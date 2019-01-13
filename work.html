@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+<title>Work/Focus Me</title>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/work.css" />
+  <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script src="js/jquery.particleground.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/slick.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./css/slick-theme.css" media="screen" />
+  <style type="text/css">
+  @font-face {
+    font-family: "myFont";
+    src: url("myFont.woff")  format('woff');
+  }
+  .myFontClass {
+    font-family: "myFont";
+    font-weight: 600;
+  }
+  </style>
+  <script type="text/javascript" charset="utf-8">
+  $(function() {
+    var h = $(window).height();
+    $('#main-contents').css('display','none');
+    $('#loader-bg ,#loader').height(h).css('display','block');
+  });
+  $(window).load(function () {
+    $('#loader-bg').delay(900).fadeOut(800);
+    $('#loader').delay(600).fadeOut(300);
+    $('#main-contents').css('display', 'block');
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    particleground(document.getElementById('particles'), {
+      dotColor: '#8b008b',
+      lineColor: '#9400d3',
+      parallax: false,
+    });
+    var intro = document.getElementById('intro');
+  }, false);
+  $(function() {
+    $('.nav span').css({
+      width: $('.nav .current').outerWidth(),
+      left: $('.nav .current').position().left
+    });
+    $('.nav a').mouseover(function(){
+      $('.nav span').stop().animate({
+        width: $(this).outerWidth(),
+        left: $(this).position().left}
+        ,'fast');
+      });
+    });
+
+    $(function(){
+      $('#nav_toggle').click(function(){
+        $(".header").toggleClass('open');
+        $(".nav").slideToggle(500);
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id="loader-bg">
+    <div id="loading">
+    </div>
+  </div>
+  <div id="particles">
+  </div>
+  <div class="header">
+    <div class="title">
+      <p><a href="./index.html"><img src="./img/title5.png" height="72px"></a></p>
+    </div>
+    <div id="nav_toggle">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div class="nav myFontClass">
+      <ul>
+        <li><a href="./index.html" class="current">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./work.html">Work</a></li>
+        <li><a href="./html/blog_1.html">Blog</a></li>
+      </ul>
+      <span></span>
+    </div>
+  </div>
+  <div class="contents">
+    <div class="work">
+      <h1 class="myFontClass">Work</h1>
+    </div>
+    <div class="container">
+      <div class="item1">
+        <p class="mobile">Focus Me -ポートフォリオサイト-</p>
+        <div class="item1_img"><p><a href="https://yutaka010.github.io/TESTver2/"><img src="./img/work1.png" width="400px" height="250px" class="item1_img1"></a></p></div>
+      </div>
+      <div class="item2">
+        <p class="mobile">未定</p>
+        <div class="video">
+          <p><video src="./img/3D自作.mp4" controls></video></p>
+          <p class="bg"></p>
+        </div>
+      </div>
+      <div class="item3">
+        <p class="mobile">未定</p>
+        <p><img src="./img/TBD.png"></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

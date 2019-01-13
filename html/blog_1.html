@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+<title>Blog/Focus Me</title>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/blog.css" />
+  <script type="text/javascript" src="../js/jquery-2.0.2.min.js"></script>
+  <script type="text/javascript" src="../js/slick.min.js"></script>
+  <script src="../js/jquery.particleground.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/slick.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/slick-theme.css" media="screen" />
+  <style type="text/css">
+  @font-face {
+    font-family: "myFont";
+    src: url("../myFont.woff")  format('woff');
+  }
+  .myFontClass {
+    font-family: "myFont";
+    font-weight: 600;
+  }
+  </style>
+  <script type="text/javascript" charset="utf-8">
+  $(function() {
+    var h = $(window).height();
+    $('#main-contents').css('display','none');
+    $('#loader-bg ,#loader').height(h).css('display','block');
+  });
+  $(window).load(function () {
+    $('#loader-bg').delay(1900).fadeOut(800);
+    $('#loader').delay(1800).fadeOut(300);
+    $('#main-contents').css('display', 'block');
+  });
+  $(function() {
+  	$('.nav span').css({
+  		width: $('.nav .current').outerWidth(),
+  		left: $('.nav .current').position().left
+  	});
+  	$('.nav a').mouseover(function(){
+  		$('.nav span').stop().animate({
+  			width: $(this).outerWidth(),
+  			left: $(this).position().left}
+  		,'fast');
+  	 });
+  });
+  $(function(){
+  	$('#nav_toggle').click(function(){
+  		$(".header").toggleClass('open');
+  		$(".nav").slideToggle(500);
+  	});
+  });
+</script>
+</head>
+<body>
+  <div id="loader-bg">
+    <div id="loading">
+        <div class="cssload-wrap">
+      	<div class="cssload-circle"></div>
+      	<div class="cssload-circle"></div>
+      	<div class="cssload-circle"></div>
+      	<div class="cssload-circle"></div>
+      	<div class="cssload-circle"></div>
+      </div>
+    </div>
+  </div>
+  <div id="particles">
+  </div>
+  <div class="header">
+    <div class="title">
+      <p><a href="../index.html"><img src="../img/title5.png" height="72px"></a></p>
+    </div>
+    <div id="nav_toggle">
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    <div class="nav myFontClass">
+      <ul>
+        <li><a href="../index.html" class="current">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../work.html">Work</a></li>
+        <li><a href="./blog_1.html">Blog</a></li>
+      </ul>
+       <span></span>
+    </div>
+  </div>
+  <div class="contents">
+    <div class="blog">
+      <h1 class="myFontClass">Blog</h1>
+    </div>
+    <div class="container">
+      <div class="nav_list">
+        <h2 class="new">最新の記事</h2>
+        <p><a href="./blog_1.html">あけましておめでとうございます</a></p>
+      </div>
+      <div class="main">
+        <h2>あけましておめでとうございます。</h2>
+        <p class="date">2019/01/08</p>
+        <p><img src="../img/blog_img1.jpg">
+        <br>去年のクリスマスに行った三重県の英虞湾
+        <br><br><br><br>明けましておめでとうございます。
+        <br>もう新年あけて13日たってるんですよね。。
+        <br>最近は一年たつのも早いなと感じてきてるんですけどどうなんですかね。
+        <br><br>とりあえず、あんまりTwitterとかで呟かないんで、去年を振り替えろうと思ったんですけど、そんなに大きい出来事ないな。
+        <br><br><br><img src="../img/blog_img2.jpg">
+        <br>燈花会の写真<br><br><br><br>最近は、色々モチベーションが維持できてなくて、これはまずいなーとか思って「へぇ～」ぐらいに思って頂けたらとサイト作ったんですけど、どうなんでしょうか？感想とかあれば教えてください。<br><br>
+        <br><br><br><br><img src="../img/blog_img3.jpg"><br>カニタワーバトル<br><br><br><br>こんな長々と文章書いてるんですけど、書類とか文章書くのめちゃくちゃ苦手なんですよ。昔とか読書感想文あったじゃないですか、もう最悪でしたね。
+        <br><br><br>思いつきで書いてるから後から全文読んだら文が繋がってないんですよね。
+        <br><br><br>これ書いてる今もたまたま見つけたミルクレープの作り方とか見ながら書いてます。
+        <br><br><br>こんな話は置いといて....<br><br><br><br>1月27日(日）に暇な人とかいないですか？うちの学校の大きいイベントがあって、ゲームとかCGの映像とかファッションショーとかマッサージとかもうなんか色々あるんで是非きてください。
+        <br>詳しい情報とかは、ご連絡ください。
+        <br><span style="color:rgba(0,0,0,0.5);">ゲストも来るらしい...</span>
+        <br><br><br><br>色々書きましたけど今年も一年間どうぞよろしくお願いします。</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

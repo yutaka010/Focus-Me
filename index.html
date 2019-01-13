@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="UTF-8">
+<title>Focus Me</title>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery-2.0.2.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script src="js/jquery.particleground.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/slick.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="./css/slick-theme.css" media="screen" />
+  <style type="text/css">
+  @font-face {
+    font-family: "myFont";
+    src: url("myFont.woff")  format('woff');
+  }
+  .myFontClass {
+    font-family: "myFont";
+    font-weight: 600;
+  }
+  </style>
+  <script type="text/javascript" charset="utf-8">
+  $(function() {
+    var h = $(window).height();
+    $('.content').css('display','none');
+    $('#loader-bg ,#loader').height(h).css('display','block');
+  });
+  $(document).ready(function() {
+  	$('#line').addClass('fullwidth');
+  })
+  $(window).load(function () {
+    var myPromise = $.when(
+        $('#loading').delay(2600).fadeOut(2000)
+    );
+    myPromise.done(function() {
+      $('#loader-bg').delay(1000).fadeOut(1000)
+      $('.content').css('display','block')
+      $('.menu1').delay(900).fadeIn(3000);
+      $('.menu2').delay(1000).fadeIn(4000);
+      $('.menu3').delay(1100).fadeIn(5000);
+      $('.menu4').delay(1200).fadeIn(6000);
+    });
+});
+  $(function() {
+    $('h2').delay(1500).fadeIn(4000);
+    $('.slide').delay(10500).show();
+    $('.slick-box').slick({
+      autoplay:true,
+      autoplaySpeed:4000,
+      dots:true,
+      arrows:false,
+    });
+    $('.bottom').delay(3500).fadeIn(4000);
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    particleground(document.getElementById('particles'), {
+      dotColor: '#5cbdaa',
+      lineColor: '#5cbdaa'
+    });
+    var intro = document.getElementById('intro');
+  }, false);
+  </script>
+</head>
+<body>
+  <div id="loader-bg">
+    <div id="loading">
+      <div class="cssload-loader">
+    	  <div class="cssload-inner cssload-one"></div>
+    	  <div class="cssload-inner cssload-two"></div>
+    	  <div class="cssload-inner cssload-three"></div>
+      </div>
+      <div id="line">
+        <span class="expand"></span>
+      </div>
+    </div>
+  </div>
+  <div id="particles">
+  </div>
+  <div class="header">
+    <div class="top">
+    </div>
+    <div class="menu">
+      <div class="title">
+        <p><img src="img/title4.png"></p>
+      </div>
+      <div class="menu_list myFontClass">
+        <div class="menu1"><a href="./index.html">&lt;Home&gt;</a></div>
+        <div class="menu2"><a href="./about.html">&lt;About&gt;</a></div>
+        <div class="menu3"><a href="./work.html">&lt;Work&gt;</a></div>
+        <div class="menu4"><a href="./html/blog_1.html">&lt;Blog&gt;</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="contents">
+    <h2>BLOG LIST</h2>
+    <div class="slide">
+      <div class="slick-box">
+        <div class="slick-slide slick-current"><figure><a href="./html/blog_1.html"><img src="img/3.jpg" width="" height="" alt="英虞湾の写真"/></a></figure></div>
+        <div class="slick-slide"><figure><a href="./html/blog_1.html"><img src="img/5.jpg" width="" height="" alt="燈花会の写真"/></a></figure></div>
+        <div class="slick-slide"><figure><a href="./html/blog_1.html"><img src="img/4.jpg" width="" height="" alt="カニタワーバトルの写真"/></a></figure></div>
+        <div class="slick-slide"><figure><a href="./html/blog_1.html"><img src="img/7.jpg" width="" height="" alt="bitsummitの写真"/></a></figure></div>
+      </div>
+    </div>
+    <div class="info mobile">
+      <h2>info</h2>
+      <p>2019/01/13　サイト開設</p>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <p>© 2019 yutaka</p>
+  </div>
+</body>
+</html>
